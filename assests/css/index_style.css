@@ -56,7 +56,9 @@ nav ul{
 /* End nav */
 /* Start main */
 main{
-    padding: var(--nav-height);
+    padding-top: var(--nav-height);
+    padding-right: var(--nav-height);
+    padding-left: var(--nav-height);
     z-index: 1;
 }
 /* Start about section */
