@@ -1,0 +1,110 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+
+html{
+    font-family: "Roboto", Arial, Helvetica, sans-serif;
+}
+
+:root{
+    --nav-height: 100px;
+}
+
+
+a{
+    text-decoration: none;
+}
+
+a:hover{
+    text-decoration: underline;
+    color: brown;
+}
+/* Start nav */
+nav{
+    height: var(--nav-height);
+    position: fixed;
+    width: 100%;
+    box-shadow: 0 0 10px #333;
+    z-index: 5;
+    background-color: #fff;
+}
+
+nav ul li{
+    display: inline-block;
+    font-size: large;
+}
+
+nav ul li+li::before{
+    content: "";
+    margin-left: 200px;
+}
+
+nav li a{
+    color: black;
+}
+
+nav ul{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+/* End nav */
+/* Start main */
+main{
+    padding: var(--nav-height);
+    z-index: 1;
+}
+/* Start about section */
+#description{
+    display: flex;
+    margin: 32px 16px;
+}
+
+#description .about{
+    flex: 70%;
+    padding:0 100px;
+}
+
+.about h1{
+    font-weight: bold;
+    font-size: 40px;
+    margin-bottom: 16px;
+}
+
+.about p{
+    font-size: 20px;
+}
+
+#description figure{
+    flex: 30%;
+    color: rgba(0, 0, 0, 0.4);
+    padding-right: 100px;
+    display: flex;
+    flex-flow: column;
+}
+
+.projectItems{
+    border: 1px solid #333;
+    min-height: 80px;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    padding-left: 16px;
+    margin-top: 20px;
+    position: relative;
+    border-radius: 10px;
+}
+
+ .projectItems p,
+.projectItems a{
+    padding: 10px 0;
+}
+
+.projectHidden{
+    display: none;
+    flex: 100%;
+} 
