@@ -30,6 +30,9 @@ nav{
     box-shadow: 0 0 10px #333;
     z-index: 5;
     background-color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 nav ul li{
@@ -37,20 +40,23 @@ nav ul li{
     font-size: large;
 }
 
-nav ul li+li::before{
+/* nav ul li+li::before{
     content: "";
     margin-left: 200px;
-}
+} */
 
 nav li a{
     color: black;
 }
 
 nav ul{
-    position: absolute;
+    /* position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%); */
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
 }
 /* End nav */
 /* Start main */
@@ -78,3 +84,17 @@ main{
     content: "";
     margin-left: 20px;
 }
+
+@media only screen and (max-width: 767px), (orientation: landscape){
+    main{
+        padding-right: 15px;
+        padding-left: 15px;
+    }
+}
+@media only screen and (min-width: 768px) and (max-width: 1024px), (orientation: landscape) {
+    main{
+        padding-left: 50px;
+        padding-right: 50px;
+    }
+}
+

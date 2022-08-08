@@ -10,6 +10,10 @@ html{
     scroll-behavior: smooth;
 }
 
+html, body{
+    overflow-x: hidden;
+}
+
 :root{
     --nav-height: 100px;
 }
@@ -31,6 +35,9 @@ nav{
     box-shadow: 0 0 10px #333;
     z-index: 5;
     background-color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 nav ul li{
@@ -38,20 +45,23 @@ nav ul li{
     font-size: large;
 }
 
-nav ul li+li::before{
+/* nav ul li+li::before{
     content: "";
     margin-left: 200px;
-}
+} */
 
 nav li a{
     color: black;
 }
 
 nav ul{
-    position: absolute;
+    /* position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%); */
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
 }
 /* End nav */
 /* Start main */
@@ -61,10 +71,35 @@ main{
     padding-left: var(--nav-height);
     z-index: 1;
 }
+@media only screen and (max-width: 1024px), (orientation: landscape){
+    main{
+        padding-left: 50px;
+        padding-right: 50px;
+    }
+
+    @media only screen and (max-width: 768px){
+        main{
+            padding-left: 20px;
+            padding-right: 20px;
+    
+        }
+    }
+
+@media only screen and (max-width: 480px) {
+    main{
+        padding-left: 1%;
+        padding-right: 1%;
+    }
+}
+
+
+}
 /* Start about section */
 #description{
     display: flex;
+    flex-wrap: wrap;
     margin: 32px 16px;
+    /* width: 100%; */
 }
 
 #description .about{
@@ -88,6 +123,31 @@ main{
     padding-right: 100px;
     display: flex;
     flex-flow: column;
+    align-items: center;
+}
+
+#description figure img{
+    max-width: 100%;
+    height: auto;
+}
+
+@media only screen and (max-width: 950px){
+    #description{
+        margin-left: 10px;
+    }
+
+    #description .about{
+        flex: 100%;
+        padding: 0;
+    }
+
+    #description figure{
+        padding-right: 0;
+    }
+
+#description figure img{
+        margin-top: 20px;
+    }
 }
 /* End about section */
 /* Start project section */
@@ -126,4 +186,13 @@ main{
     display: inline-block;
     height: 100px;
     width: auto;
+}
+
+@media only screen and (max-width: 331px) {
+    #skill img{
+        display: block;
+        width: 100%;
+        height: auto;
+        margin-top: 5px;
+    }
 }
